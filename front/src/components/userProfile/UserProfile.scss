@@ -1,0 +1,95 @@
+.user-profile {
+    padding: 50px;
+    font-family: var(--font-family);
+    color: hwb(0 0% 100%);
+
+    .title {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .empty-container {
+        text-align: center;
+    }
+
+    .empty {
+        font-size: 18px;
+        color: #aaa;
+    }
+
+    .empty-image {
+        margin-top: 20px;
+        max-width: 500px; /* Максимальная ширина для изображения */
+        height: auto;
+    }
+
+    .booking-card {
+        width: 1200px; /* Увеличенная ширина */
+        background-color: #00aaff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 128, 212, 0.6);
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .booking-info {
+            display: flex; /* Горизонтальное расположение */
+            justify-content: space-between; /* Распределяем элементы */
+            align-items: center;
+
+            .seats {
+                display: flex;
+                gap: 10px;
+
+                span.seat {
+                    background: #ff007b;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    color: #000;
+                    font-weight: bold;
+                }
+            }
+
+            .price {
+                font-weight: bold;
+                color: #000000;
+                margin-left: auto; /* Прижимаем к правому краю */
+            }
+        }
+    }
+
+    .border {
+        width: 100%;
+        height: 1px;
+        margin-top: 40px;
+        background-image: linear-gradient(90deg, #00bcd4, #ff007b);
+        box-shadow: 0 0 15px rgba(0, 188, 212, 0.5),
+            0 0 15px rgba(255, 0, 123, 0.5);
+        position: relative;
+    }
+}
+
+.remove-button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.remove-button:hover {
+    background-color: darkred;
+}

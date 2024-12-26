@@ -1,0 +1,130 @@
+:root {
+    --font-family: "Anonymous Pro", sans-serif;
+    --second-family: "Inter", sans-serif;
+}
+
+.movie-detail {
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+    font-family: var(--font-family); /* Используем основной шрифт */
+}
+
+.movie-content {
+    display: flex;
+    flex-direction: column; /* Колонка для всех блоков */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.movie-header {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.movie-image {
+    object-fit: cover;
+    width: 420px;
+    height: 650px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1; /* Чтобы занять оставшееся пространство */
+
+    .movie-title {
+        font-size: 36px;
+        font-weight: bold;
+
+        color: #fff;
+        font-family: var(--font-family); /* Применяем основной шрифт */
+    }
+
+    .movie-genre {
+        font-size: 18px;
+        color: #aaa;
+        font-family: var(--font-family);
+    }
+
+    .movie-description {
+        font-size: 16px;
+        max-width: 750px; /* Максимальная ширина */
+        width: 100%;
+        color: #ddd;
+        line-height: 1.5;
+        font-family: var(--font-family);
+        word-wrap: break-word; /* Перенос длинных слов */
+    }
+
+    .sessions {
+        display: flex;
+        flex-wrap: wrap; /* Если сессий слишком много, перенос на следующую строку */
+        gap: 15px; /* Расстояние между сессиями */
+        margin-top: 20px;
+        justify-content: flex-start; /* Выравнивание сессий в начале строки */
+    }
+
+    .session-info {
+        cursor: pointer;
+        margin-top: 30px;
+        width: 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+        border: 2px solid #ff007b;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #ff007b;
+        font-weight: bold;
+        background-color: #000;
+        position: relative;
+        text-align: left;
+        font-family: var(--font-family);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+
+        p {
+            margin: 0; /* Убираем отступы для текста */
+            font-family: var(--font-family);
+        }
+        &:hover {
+            transform: scale(1.09);
+            background-color: #ff007b; /* Добавляем изменение фона при наведении */
+            color: #000000;
+        }
+    }
+}
+
+.additional-info {
+    margin-top: 50px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 700px;
+    height: 138px;
+    background-color: #00aaff;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+
+    p {
+        margin: 5px 0;
+    }
+}
+.movie-detail .border {
+    width: 100%;
+    height: 1px;
+    margin-top: 80px;
+    background-image: linear-gradient(90deg, #00bcd4, #ff007b);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5), 0 0 15px rgba(255, 0, 123, 0.5);
+    position: relative;
+}

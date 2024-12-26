@@ -1,0 +1,64 @@
+services:
+    nginx:
+        image: nginx:latest
+        restart: unless-stopped
+        volumes:
+            - ./nginx/nginx.dev.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx/static:/app/static
+            - media:/app/media
+        ports:
+            - "80:80"
+        depends_on:
+            - app
+            - db
+
+    db:
+        image: postgres:14.8-alpine3.18
+        env_file: app/.env
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        expose:
+            - 5432
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U user -d db"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+            start_period: 10s
+        restart: unless-stopped
+
+    # pgadmin:
+    #   image: dpage/pgadmin4
+    #   env_file: app/.env
+    #   ports:
+    #     - "5050:80"
+    #   restart: unless-stopped
+
+    app:
+        env_file: app/.env
+        build:
+            context: "."
+            dockerfile: "./app/Dockerfile"
+        volumes:
+            - "./app/cinema:/app"
+            - media:/app/media
+        command: "top -d1"
+        expose:
+            - 8000
+        restart: unless-stopped
+
+    # front:
+    #   env_file: app/.env
+    #   build:
+    #     context: "."
+    #     dockerfile: "./front/Dockerfile"
+    #   command: "top -d1"
+    #   volumes:
+    #     - "./front/anywork:/app"
+    #   expose:
+    #     - 8000
+
+volumes:
+    postgres_data:
+    static:
+    media:

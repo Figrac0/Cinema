@@ -1,0 +1,52 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.loading-icon {
+    padding-top: 10px;
+    font-size: 24px;
+    animation: spin 1s linear infinite;
+}
+
+.info-button {
+    margin: 50px 0 20px 0;
+    background-color: #00aaff;
+    color: #fff;
+    padding: 4px 4px;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+    width: 160px;
+    display: inline-block;
+
+    &:hover {
+        background-color: #0097a7;
+        transform: scale(1.01);
+    }
+
+    &:active {
+        background-color: #007a8a;
+        transform: scale(1);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
