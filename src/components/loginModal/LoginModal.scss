@@ -1,0 +1,122 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: #000;
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.7);
+    border: 2px solid #ff007b;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00bcd4; /* Синий фон */
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: 2px solid #00bcd4;
+
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        color: #000000;
+        font-weight: bold;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .tab.active {
+        color: #585757; /* Черный текст */
+    }
+
+    .close-btn {
+        font-size: 40px;
+        color: #ff007b;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+
+    input {
+        display: flex;
+        margin: 10px auto;
+        padding: 10px;
+        border-radius: 5px;
+        border: 3px solid #ff007b; /* Синий обводка */
+        background-color: #000;
+        color: #fff;
+        font-size: 16px;
+        text-align: center;
+        height: 40px;
+        font-weight: bold;
+        width: 85%;
+        transition: border-color 0.3s;
+
+        &::placeholder {
+            color: #ff007b; /* Синий текст для placeholder */
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: #00bcd4; /* Розовый при фокусе */
+        }
+    }
+
+    .submit-btn {
+        width: 85%;
+        height: 40px; /* Задаем такую же высоту, как у input */
+        padding: 10px; /* Можно оставить для внутреннего отступа */
+        background-color: #00bcd4;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        font-weight: bold;
+        display: block;
+        margin: 20px auto 0;
+
+        &:hover {
+            background-color: #ff007b;
+            color: #fff;
+        }
+    }
+}
+.error {
+    text-align: center;
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

@@ -1,0 +1,113 @@
+:root {
+    --font-family: "Anonymous Pro", sans-serif;
+    --second-family: "Inter", sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Распределение элементов по краям */
+    align-items: center;
+    padding: 20px 20px; /* Увеличенный внутренний отступ */
+    background-color: #000;
+    width: 100%;
+    max-width: 1200px; /* или любое значение, которое вы хотите */
+    margin: 0 auto;
+
+    .logo {
+        cursor: pointer;
+        color: #ff007b;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: var(--font-family); /* Применяем шрифт Anonymous Pro */
+        transition: transform 0.3s ease; /* Плавный переход для анимации */
+
+        &:hover {
+            animation: pulse 1s infinite; /* Применяем анимацию пульсации */
+        }
+    }
+
+    .login-btn {
+        color: #ff007b;
+        background-color: transparent;
+        border: 2px solid #ff007b;
+        padding: 8px 15px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: 0.3s;
+        font-family: var(--second-family); /* Применяем шрифт Inter */
+    }
+
+    .login-btn:hover {
+        background-color: #ff007b;
+        color: #000;
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center; // Центрируем элементы по вертикали
+        gap: 10px; // Пробел между именем и кнопкой
+    }
+
+    .user-name {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 24px;
+        color: #e11c64;
+        cursor: pointer;
+    }
+
+    .gradient-circle {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #ff007b, #00bcd4);
+        display: inline-block;
+        position: relative;
+        transition: transform 0.3s ease; /* Плавный переход для анимации */
+    }
+
+    .gradient-circle::before {
+        content: "🩷"; /* Смайлик в кружке */
+        font-size: 18px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Центрируем */
+    }
+
+    .gradient-circle:hover {
+        animation: pulse 2s infinite; /* Применяем анимацию пульсации */
+    }
+
+    /* Разделительная полоска */
+    .separator {
+        width: 2px;
+        height: 40px;
+        background: linear-gradient(45deg, #ff007b, #00bcd4);
+        opacity: 0;
+        animation: fadeIn 3s forwards;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Начинаем с полной прозрачности */
+    }
+    100% {
+        opacity: 1; /* В конце анимации становится видимой */
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Исходный размер */
+    }
+    50% {
+        transform: scale(1.1); /* Увеличение размера */
+    }
+    100% {
+        transform: scale(1); /* Возвращение к исходному размеру */
+    }
+}

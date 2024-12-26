@@ -1,0 +1,125 @@
+:root {
+    --font-family: "Anonymous Pro", sans-serif;
+    --second-family: "Inter", sans-serif;
+}
+
+.sort-filter {
+    display: flex;
+    justify-content: space-between; /* Разнести элементы по краям */
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #000;
+
+    .filters {
+        display: flex; /* Горизонтальное расположение кнопок */
+        gap: 20px; /* Отступы между кнопками */
+    }
+
+    .filter-group {
+        position: relative; /* Контекст для выпадающего меню */
+    }
+
+    button {
+        font-family: var(--second-family);
+        cursor: pointer;
+        width: 120px; /* Фиксированная ширина кнопки */
+        height: 60px; /* Фиксированная высота кнопки */
+        border-radius: 10px; /* Скругление углов */
+        background-color: #00bcd4; /* Основной цвет кнопки */
+        color: #000; /* Цвет текста */
+        border: none; /* Без границ */
+        font-size: 16px; /* Размер текста */
+        font-weight: bold; /* Жирный текст */
+        text-align: center; /* Текст в центре */
+        line-height: 40px; /* Центрируем текст по вертикали */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход при наведении */
+
+        &:hover {
+            background-color: #008c9e; /* Цвет кнопки при наведении */
+            color: #fff; /* Цвет текста при наведении */
+        }
+
+        &:active {
+            transform: translateY(2px); /* Смещение при клике */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшение тени */
+        }
+    }
+
+    .filter-options {
+        font-family: var(--second-family);
+        font-size: 20px;
+        margin-top: 2px;
+        position: absolute; /* Расположение под кнопкой */
+        top: 100%; /* Сразу под кнопкой */
+        left: 0; /* Выравнивание по левому краю кнопки */
+        background-color: #00bcd4;
+        color: #000;
+        border-radius: 5px;
+        padding: 5px 0;
+        box-shadow: 0 2px 4px #008c9e;
+        z-index: 1000;
+        width: 120px; /* Совпадает с шириной кнопки */
+
+        div {
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            border-bottom: 1px solid #008c9e;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: #008c9e;
+                color: #fff;
+            }
+        }
+    }
+
+    .search-bar {
+        margin-left: 640px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        background-color: #00bcd4;
+        border-radius: 5px;
+        padding: 10px;
+        width: 400px;
+
+        input {
+            font-family: var(--second-family);
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 16px;
+            color: #000;
+            width: 100%;
+            padding: 0 10px;
+
+            &::placeholder {
+                color: #000;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.filter-options div.active {
+    color: #ff007b; /* Белый текст */
+    font-weight: bold; /* Жирный текст */
+    border-radius: 5px; /* Скругленные углы */
+    padding: 5px; /* Дополнительное пространство */
+    transition: background-color 0.3s ease;
+}
+
+.filter-options .filter-group div {
+    user-select: none; /* Отключает выделение текста */
+}
+
+/* SortFilter.scss */
+
+.reset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
